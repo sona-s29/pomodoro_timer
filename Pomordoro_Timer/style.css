@@ -1,0 +1,133 @@
+:root {
+    --work-color: #8a2be2;
+    --break-color: #ffa500;
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --text-color: #ffffff;
+    --bg-gradient: linear-gradient(to right, #141e30, #243b55);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    background: url(timer.jpg);
+    background-position: center;
+    background-size: cover;
+    color: var(--text-color);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+  }
+  
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  }
+  
+  h2 {
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  
+  .timer-ring {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+  }
+  
+  svg {
+    transform: rotate(-90deg);
+  }
+  
+  .ring-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 15;
+  }
+  
+  .ring-progress {
+    fill: none;
+    stroke: var(--work-color);
+    stroke-width: 15;
+    stroke-dasharray: 690;
+    stroke-dashoffset: 690;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s linear, stroke 0.3s;
+    filter: drop-shadow(0 0 6px var(--work-color));
+  }
+  
+  .time-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.8rem;
+    font-weight: bold;
+  }
+  
+  .mode {
+    margin-top: 20px;
+    font-size: 1.1rem;
+  }
+  
+  .dots {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    background: #777;
+    border-radius: 50%;
+  }
+  
+  .dot.active {
+    background: #fff;
+  }
+  
+  button {
+    margin-top: 20px;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    padding: 14px 20px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: rgba(255,255,255,0.3);
+  }
+  
+  @media (max-width: 480px) {
+    .timer-ring {
+      width: 180px;
+      height: 180px;
+    }
+  
+    .time-display {
+      font-size: 2.2rem;
+    }
+  }
+  

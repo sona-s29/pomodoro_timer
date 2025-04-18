@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="glass">
+      <h2>Pomodoro</h2>
+      <div class="timer-ring">
+        <svg width="250" height="250">
+          <circle cx="125" cy="125" r="110" class="ring-bg"/>
+          <circle cx="125" cy="125" r="110" class="ring-progress"/>
+        </svg>
+        <div class="time-display" id="timeDisplay">25:00</div>
+      </div>
+      <div class="mode">
+        <span id="modeText">Work</span>
+        <div class="dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <button id="startPauseBtn">
+        <span id="playIcon">▶</span>
+        <span id="pauseIcon" style="display: none;">⏸</span>
+      </button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
